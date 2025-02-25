@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    font-family: sans-serif;
+
+}
+
+.content{
+    display: flex;
+    justify-content: space-between;
+}
+
+.container{
+    text-align: center;
+    width: 65vw;
+    height: 100vh;
+}
+
+.container header h1{
+    font-weight: 300;
+    padding-top: 140px;
+    font-size: 50px;
+
+}
+
+.fieldNumberPlate{
+    margin: 70px auto 80px;
+    background-color: #d9d9d9;
+    font-size: 80px;
+    width: 42vw;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    padding: 5px 20px;
+
+}
+
+.div-buttons{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 100px;
+}
+
+.button-numberPlate{
+    padding: 10px;
+    background-color: #d9d9d9;
+    border-radius: 10px;
+    width: 100px;
+    height: 100px;
+    font-size: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s;
+    cursor: pointer;
+
+}
+
+.button-numberPlate:hover{
+    background-color: #D1FFD2;
+}
+
+footer{
+    display: flex;
+    justify-content: space-around;
+}
+
+.button-white{
+    padding: 20px;
+    font-size: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.button-confirm{
+    padding: 20px;
+    font-size: 40px;
+    border-radius: 20px;
+    background-color: #20D929;
+    color: white;
+    cursor: pointer;
+
+}
+
+.membersPhotos{
+    height: 100vh;
+    width: 35vw;
+    background-color: #d9d9d9;
+
+}
+
+.results{
+    font-size: 50px;
+}
