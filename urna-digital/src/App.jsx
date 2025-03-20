@@ -2,6 +2,7 @@ import './App.css';
 import { useState } from 'react';
 import { GrDeploy } from "react-icons/gr";
 import ModalCloseElection from './components/ModalCloseElection';
+import { toast } from 'react-toastify';
 
 function App() {
   const [num, setNum] = useState(0);
@@ -20,15 +21,19 @@ function App() {
 
   function whiteVote() {
     setWhite(white + 1);
+    toast.success("Voto realizado.")
   }
 
   function confirmVote() {
     if (num === 1) {
       setPlate1(plate1 + 1);
+      toast.success("Voto realizado.")
     } else if (num === 2) {
       setPlate2(plate2 + 1);
+      toast.success("Voto realizado.")
     } else if (num === 3) {
       setPlate3(plate3 + 1);
+      toast.success("Voto realizado.")
     }
     setNum(0);
   }
