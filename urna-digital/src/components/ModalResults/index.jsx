@@ -98,6 +98,7 @@ export default function ModalResults({ isOpen, onClose, results = {}, onReset = 
             toast.success("Votação zerada com sucesso!");
             setShowResetConfirm(false);
             onClose();
+            window.location.reload();
         } catch (error) {
             console.error('Erro ao resetar votos:', error);
             toast.error("Ocorreu um erro ao zerar a votação");
