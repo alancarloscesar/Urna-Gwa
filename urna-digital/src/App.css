@@ -4,109 +4,350 @@
     box-sizing: border-box;
     border: none;
     outline: none;
-    font-family: sans-serif;
-
+    font-family: 'Poppins', sans-serif;
 }
 
+body {
+    overflow-x: hidden;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+}
+
+/* Container Principal */
 .content {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 1rem;
+    background-image: url(../img/fundo.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .container {
     text-align: center;
-    width: 65vw;
-    height: 100vh;
+    width: 90%;
+    max-width: 800px;
+    min-height: 70vh;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    padding: 1.5rem;
+    margin: 2rem auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(46, 204, 113, 0.08) 0%, transparent 70%);
+    transform: rotate(30deg);
+    z-index: -1;
+}
+
+/* Cabeçalho */
+header {
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 1rem;
+    text-align: center;
+}
+
+.tit-img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+#img-logo {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 0.5rem;
 }
 
 .container header h1 {
-    font-weight: 300;
-    padding-top: 140px;
-    font-size: 50px;
-
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: #2c3e50;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    line-height: 1.3;
 }
 
-.fieldNumberPlate {
-    margin: 70px auto 80px;
-    background-color: #d9d9d9;
-    font-size: 80px;
-    width: 42vw;
-    display: flex;
-    justify-content: space-between;
-    border-radius: 10px;
-    padding: 5px 20px;
-
+.container header p {
+    font-size: 1rem;
+    color: #555;
+    margin: 0.5rem 0;
+    line-height: 1.4;
 }
 
+.line {
+    height: 1px;
+    width: 100%;
+    background: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.1) 50%, transparent 100%);
+    margin: 1rem 0;
+}
+
+/* Botões de Votação */
 .div-buttons {
-    display: flex;
-    justify-content: space-evenly;
-    margin-bottom: 100px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 2rem 0;
 }
 
 .button-numberPlate {
-    padding: 10px;
-    background-color: #d9d9d9;
-    border-radius: 10px;
-    width: 100px;
-    height: 100px;
-    font-size: 80px;
+    padding: 0.8rem;
+    background: #fff;
+    border-radius: 12px;
+    width: 100%;
+    aspect-ratio: 1/1;
+    font-size: 1.8rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.4s;
+    transition: all 0.3s ease;
     cursor: pointer;
-
+    border: 2px solid #2ecc71;
+    color: #2ecc71;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
 }
 
 .button-numberPlate:hover {
-    background-color: #D1FFD2;
+    background-color: #f1fff5;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-footer {
+/* Área de Confirmação */
+.div-btn {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin: 1.5rem auto;
+    width: 100%;
+    max-width: 400px;
     display: flex;
+    align-items: center;
     justify-content: space-around;
 }
 
-.button-white {
-    padding: 20px;
-    font-size: 40px;
-    border-radius: 20px;
+.button-white,
+.button-confirm,
+.button-cancel {
+    font-size: 1rem;
+    width: 100%;
+    height: 50px;
+    border-radius: 25px;
     cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-white {
+    border: 2px solid #3498db;
+    background: #fff;
+    color: #3498db;
 }
 
 .button-confirm {
-    padding: 20px;
-    font-size: 40px;
-    border-radius: 20px;
-    background-color: #20D929;
+    background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
     color: white;
-    cursor: pointer;
-
+    border: none;
 }
 
-.membersPhotos {
-    height: 100vh;
-    width: 35vw;
-    background-color: #d9d9d9;
-
+.button-cancel {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    color: white;
+    border: none;
 }
 
-.results {
-    font-size: 50px;
+/* Estados e Interações */
+.button-white:hover:not(:disabled) {
+    background: #f0f8ff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
+.button-confirm:hover,
+.button-cancel:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
 
-/* botão de finalizar */
+.button-white:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+.selected {
+    background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%) !important;
+    color: white !important;
+    border: 2px solid #27ae60 !important;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(46, 204, 113, 0.3) !important;
+}
+
+/* Botão de Finalizar */
 .finished-election {
     position: fixed;
-    top: 2%;
-    right: 1%;
+    top: 1rem;
+    right: 1rem;
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: #20D929;
+    background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
     color: #fff;
-    font-size: 20px;
+    font-size: 1.2rem;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.finished-election:hover {
+    transform: scale(1.1) rotate(90deg);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* ============ MEDIA QUERIES ============ */
+
+/* Tablets (768px+) */
+@media (min-width: 768px) {
+    .container {
+        padding: 2rem;
+        border-radius: 25px;
+    }
+
+    .tit-img {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    #img-logo {
+        margin-right: 1rem;
+        margin-bottom: 0;
+    }
+
+    .container header h1 {
+        font-size: 1.8rem;
+    }
+
+    .container header p {
+        font-size: 1.1rem;
+    }
+
+    .div-buttons {
+        gap: 1.5rem;
+        margin: 2.5rem 0;
+    }
+
+    .button-numberPlate {
+        font-size: 2.2rem;
+        max-width: 100px;
+    }
+
+    .div-btn {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 100%;
+        gap: 1.5rem;
+    }
+
+    .button-white,
+    .button-confirm,
+    .button-cancel {
+        font-size: 1.1rem;
+    }
+}
+
+/* Desktop (992px+) */
+@media (min-width: 992px) {
+    .container {
+        width: 80%;
+        max-width: 900px;
+        min-height: 75vh;
+    }
+
+    .container header h1 {
+        font-size: 2rem;
+    }
+
+    .div-buttons {
+        margin: 3rem 0;
+    }
+
+    .button-numberPlate {
+        max-width: 110px;
+        font-size: 2.5rem;
+    }
+
+    .div-btn {
+        margin: 2rem auto;
+    }
+}
+
+/* Telas Grandes (1200px+) */
+@media (min-width: 1200px) {
+    .container {
+        padding: 2.5rem;
+    }
+
+    .container header h1 {
+        font-size: 2.2rem;
+    }
+
+    .button-numberPlate {
+        max-width: 120px;
+        height: 120px;
+    }
+}
+
+/* Modo Retrato em Dispositivos Pequenos */
+@media (max-width: 400px) and (orientation: portrait) {
+    .container {
+        width: 95%;
+        padding: 1.2rem;
+    }
+
+    .button-numberPlate {
+        font-size: 1.5rem;
+    }
+
+    .div-btn {
+        gap: 0.8rem;
+    }
+}
+
+/* Ajustes para quando o teclado está aberto em mobile */
+@media (max-height: 600px) {
+    .content {
+        padding: 0.5rem;
+    }
+
+    .container {
+        min-height: auto;
+        margin: 1rem auto;
+    }
+
+    .div-buttons {
+        margin: 1rem 0;
+    }
 }
